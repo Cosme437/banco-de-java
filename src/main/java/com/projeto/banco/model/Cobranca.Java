@@ -10,7 +10,7 @@ import  lombok.NoArgsConstructor;
 @Entity(nome = "tb_cobranca")
 @Getter
 @NoArgsConstructor
-class conta {
+class cobranca {
     @id
     @GeneratedValue(stratagy = GeneratedType.IDENTITY)
     private long id;
@@ -18,8 +18,6 @@ class conta {
     private String data;
     @column(nullable = false)
     private String valor;
-    @column( nullable = false)
-    private String data;
     @column(nullable = false)
     private String instituicao;
     @column(nullable = false)

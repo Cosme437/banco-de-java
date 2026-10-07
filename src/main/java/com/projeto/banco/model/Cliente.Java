@@ -7,7 +7,7 @@ import Jakart.persistence.id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity(nome = "tb_clientes")
+@Entity(name = "tb_cliente")
 @Getter
 @NoArgsConstructor
 class cliente {
@@ -16,11 +16,29 @@ class cliente {
     private long id;
     @column(nullable = false)
     private String nome;
-    @column(nullable = false, unique = true
+    @column(nullable = false, unique = true)
     private String email;
     @column(nullable = false)
     private String senha;
-    @column(nullable = false, unique = true
-    private String documento;
-    )
+    @column(nullable = false, unique = true)
+    private String contato;
+    @column(nullable = false)
+    private String cpf;
+    
+
+    protected Cliente(String nome, String cpf, String email, String contato, String senha) {
+        this.nome = nome;
+        this.documento = cpf;
+        this.email = email;
+        this.contato = contato;
+        this.senha = senha;
+    }
+
+    public abstract String setnome(return){
+        this.nome = nome;
+    };
+
+    public abstract String getNome(){
+        this.nome = nome;
+    };
 }

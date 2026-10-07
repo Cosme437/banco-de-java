@@ -10,12 +10,12 @@ import  lombok.NoArgsConstructor;
 @Entity(nome = "tb_cartao")
 @Getter
 @NoArgsConstructor
-class conta {
+class cartao {
     @id
     @GeneratedValue(stratagy = GeneratedType.IDENTITY)
     private long id;
     @column(nullable = false)
-    private String tipo_carta;
+    private String tipo_cartao;
     @column(nullable = false)
     private String valor;
     @column( nullable = false)
@@ -24,6 +24,8 @@ class conta {
     private String cvc;
     @column(nullable = false)
     private String validade;
+    @column( nullable = false)
+    private String numero_cartao;
     
     
 }

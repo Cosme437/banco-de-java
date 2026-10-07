@@ -7,21 +7,21 @@ import  Jakart.persistence.id;
 import  lombok.Getter;
 import  lombok.NoArgsConstructor;
 
-@Entity(nome = "tb_transferencia")
+@Entity(nome = "tb_empresa")
 @Getter
 @NoArgsConstructor
-class conta {
+class empresa {
     @id
     @GeneratedValue(stratagy = GeneratedType.IDENTITY)
     private long id;
     @column(nullable = false)
-    private String valor;
+    private String cnpj;
     @column(nullable = false)
-    private String origem;
+    private String endereco;
     @column( nullable = false)
-    private String data;
+    private String numero_filial;
     @column(nullable = false)
-    private String destinario;
+    private String contato;
     
     
 }

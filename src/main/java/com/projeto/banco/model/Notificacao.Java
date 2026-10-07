@@ -10,7 +10,7 @@ import  lombok.NoArgsConstructor;
 @Entity(nome = "tb_notificacao")
 @Getter
 @NoArgsConstructor
-class conta {
+class notificacao {
     @id
     @GeneratedValue(stratagy = GeneratedType.IDENTITY)
     private long id;
