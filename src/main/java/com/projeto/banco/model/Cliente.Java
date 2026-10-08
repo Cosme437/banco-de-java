@@ -1,44 +1,46 @@
 package com.projeto.banco.model;
-import Jakart.persitence.column;
-import Jakart.persitence.Entity;
-import Jakart.persistence.GeneratedValue;
-import Jakart.persistence.GeneratedType;
-import Jakart.persistence.id;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "tb_cliente")
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Getter
 @NoArgsConstructor
-class cliente {
-    @id
-    @GeneratedValue(stratagy = GeneratedType.IDENTITY)
-    private long id;
-    @column(nullable = false)
-    private String nome;
-    @column(nullable = false, unique = true)
-    private String email;
-    @column(nullable = false)
-    private String senha;
-    @column(nullable = false, unique = true)
-    private String contato;
-    @column(nullable = false)
-    private String cpf;
-    
+public abstract class Cliente {
 
-    protected Cliente(String nome, String cpf, String email, String contato, String senha) {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String nome;
+
+    @Column(nullable = false, unique = true)
+    private String senha;
+
+    private String email;
+
+    private String endereco;
+
+    private String contato;
+
+    protected Cliente(String nome, String senha, String email, String endereco, String contato) {
         this.nome = nome;
-        this.documento = cpf;
-        this.email = email;
-        this.contato = contato;
         this.senha = senha;
+        this.email = email;
+        this.endereco = endereco;
+        this.contato = contato;
     }
 
-    public abstract String setnome(return){
-        this.nome = nome;
-    };
 
-    public abstract String getNome(){
-        this.nome = nome;
-    };
 }
+    
+

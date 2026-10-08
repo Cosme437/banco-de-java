@@ -10,7 +10,7 @@ import  lombok.NoArgsConstructor;
 @Entity(nome = "tb_cartao")
 @Getter
 @NoArgsConstructor
-class cartao {
+class cartao  {
     @id
     @GeneratedValue(stratagy = GeneratedType.IDENTITY)
     private long id;
@@ -27,6 +27,13 @@ class cartao {
     @column( nullable = false)
     private String numero_cartao;
     
-    
-}
+    protected Cartao(String tipo_cartao, String valor, String nome, String cvc, String validade, String numero_cartao) {
+        this. tipo_cartao  = tipo_cartao;
+        this. valor = valor;
+        this. nome = nome ;
+        this. cvc = cvc;
+        this.senha = senha;
+    }
 
+    
+    

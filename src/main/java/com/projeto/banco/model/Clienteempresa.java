@@ -7,23 +7,23 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "tb_cartao")
+@Entity(name = "tb_cliente_empresa")
 @Getter
 @NoArgsConstructor
-class cliente_empresa {
+class clienteempresa extends Cliente {
     @Id
     @GeneratedValue(strategy = GeneratedValue.IDENTITY)
     private long id;
     @Column(nullable = false)
-    private String nome;
-    @Column(nullable = false)
     private String cnpj;
-    @Column(nullable = false)
-    private String endereco;
-    @Column( nullable = false)
-    private String email;
-    @Column(nullable = false)
-    private String contato;
+
+    
+    protected cliente_empresa(String nome, String cnpj, String endereco, String email, String contato) {
+        super(nome, contato, endereco, contato, email);
+        
        
+    }
 }
+    
+
 
