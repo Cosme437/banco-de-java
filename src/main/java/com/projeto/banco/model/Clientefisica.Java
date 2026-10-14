@@ -10,15 +10,26 @@ import lombok.NoArgsConstructor;
 @Entity(name = "tb_clientefisica")
 @Getter
 @NoArgsConstructor
-class cliente_fisica extends Cliente {
+class Clientefisica {
     @id
     @column(nullable = false)
     private String cpf;
-    
+    @Column(nullable = false)
+    private String nome;
+    @Column(nullable = false, unique = true)
+    private String senha;
+    private String email;
+    private String endereco;
+    private String contato;
 
-    protected Cliente(String nome, String cpf, String email, String contato, String senha) {
-        super(nome, senha, contato, email);
-        this.documento = cpf;
+
+    protected Cliente(String nome, String cpf, String endereco, String email, String contato, String senha) {
+        this.nome = nome;
+        this.senha = senha;
+        this.email = email;
+        this.endereco = endereco;
+        this.contato = contato;
+        this.cpf = cpf;
     }
 }
     
