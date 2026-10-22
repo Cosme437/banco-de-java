@@ -1,5 +1,5 @@
 package com.projeto.banco.model;
-import  Jakart.persistence.column;
+import  jakart.persistence.column;
 import  Jakart.persistence.Entity;
 import  Jakart.persistence.GeneratedValue;
 import  Jakart.persistence.GeneratedType;
