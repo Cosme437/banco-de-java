@@ -1,24 +1,27 @@
 package com.projeto.banco.model;
-import  Jakart.persistence.column;
-import  Jakart.persistence.Entity;
-import  Jakart.persistence.GeneratedValue;
-import  Jakart.persistence.GeneratedType;
-import  Jakart.persistence.id;
-import  lombok.Getter;
-import  lombok.NoArgsConstructor;
 
-@Entity(name = "tb_filial);
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Entity(name = "tb_filial")
 @Getter
 @NoArgsConstructor
-class filial
-    @id
-    @GeneratedValue(stratagy = GeneratedType.IDENTITY)
-    private long id;
-    @column(nullable = false)
+public class Filial {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
     private String nome;
-    @column(nullable = false)
+
+    @Column(nullable = false)
     private String endereco;
-    @column( nullable = false)
+
+    @Column(nullable = false)
     private String contato;
-}
-    
