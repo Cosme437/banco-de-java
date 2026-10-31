@@ -34,6 +34,6 @@ class cartao  {
         this. cvc = cvc;
         this.senha = senha;
     }
-
+}
     
     

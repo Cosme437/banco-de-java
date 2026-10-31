@@ -25,3 +25,4 @@ public class Filial {
 
     @Column(nullable = false)
     private String contato;
+    } 
