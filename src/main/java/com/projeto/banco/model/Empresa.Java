@@ -18,8 +18,6 @@ class empresa {
     private String cnpj;
     @column(nullable = false)
     private String endereco;
-    @column( nullable = false)
-    private String numero_filial;
     @column(nullable = false)
     private String contato;
     
